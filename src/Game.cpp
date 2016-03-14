@@ -17,16 +17,29 @@
 int Game::run()
 {   
     ResourceManager::loadTexture("Background.png");
+    ResourceManager::loadTexture("Trains.png");
 
-    sf::RenderWindow window(sf::VideoMode(2560, 1440, 32), "Game as Fuck", sf::Style::Fullscreen);
+    sf::RenderWindow window(sf::VideoMode(2560, 1600), "Game as Fuck", sf::Style::Fullscreen);
     window.setFramerateLimit(60);
     window.setVerticalSyncEnabled(true);
+
+    SpriteComponent* scp;
+    TransformComponent* tcp;
 
     Entity* e1 = EntityManager::createEntity();
     EntityManager::addComponentToEntity<TransformComponent>(e1->id);
     EntityManager::addComponentToEntity<SpriteComponent>(e1->id);
-    SpriteComponent* scp = EntityManager::getComponentFromEntity<SpriteComponent>(e1->id);
+    scp = EntityManager::getComponentFromEntity<SpriteComponent>(e1->id);
     scp->sprite.setTexture(ResourceManager::getTexture("Background.png"));
+    
+    Entity* e2 = EntityManager::createEntity();
+    EntityManager::addComponentToEntity<TransformComponent>(e2->id);
+    EntityManager::addComponentToEntity<SpriteComponent>(e2->id);
+    scp = EntityManager::getComponentFromEntity<SpriteComponent>(e2->id);
+    scp->sprite.setTexture(ResourceManager::getTexture("Trains.png"));
+    scp->sprite.setTextureRect(sf::IntRect(0, 0, 16, 64));
+    tcp = EntityManager::getComponentFromEntity<TransformComponent>(e2->id);
+    tcp->setScale(sf::Vector2f(5, 5));
 
     RenderingSystem renderSystem(window);
     
