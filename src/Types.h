@@ -2,9 +2,6 @@
 //  Types.h
 //  Game
 //
-//  Created by Jon Abel on 3/4/16.
-//  Copyright © 2016 Jon Abel. All rights reserved.
-//
 
 #ifndef Types_h
 #define Types_h
