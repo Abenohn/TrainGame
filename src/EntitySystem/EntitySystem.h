@@ -12,6 +12,7 @@
 #include "Components/Component.hpp"
 #include "Components/TransformComponent.hpp"
 #include "Components/SpriteComponent.hpp"
+#include "Components/CameraComponent.hpp"
 
 #include "Systems/System.hpp"
 #include "Systems/RenderingSystem.hpp"

@@ -22,6 +22,10 @@ bool GameScene::load()
 	EntityManager::getComponentFromEntity<SpriteComponent>(train->id)->sprite.setTexture(ResourceManager::getTexture("Trains.png"));
 	EntityManager::getComponentFromEntity<SpriteComponent>(train->id)->sprite.setTextureRect(sf::IntRect(0, 0, 16, 64));
 	EntityManager::getComponentFromEntity<TransformComponent>(train->id)->stretch(5, 5);
+
+	Entity* mainCamera = EntityManager::createEntity();
+	EntityManager::addComponentToEntity<CameraComponent>(mainCamera->id);
+	CameraComponent* ccp = EntityManager::getComponentFromEntity<CameraComponent>(mainCamera->id);
 	
 	return true;
 }
