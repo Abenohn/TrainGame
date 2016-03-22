@@ -52,17 +52,17 @@ int Game::run()
 		}
 		
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::W))
-			EntityManager::getComponentFromEntity<CameraComponent>(2)->view.move(0, -5);
+			EntityManager::getComponentFromEntity<CameraComponent>(2)->move(0, -5);
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::S))
-			EntityManager::getComponentFromEntity<CameraComponent>(2)->view.move(0, 5);
+			EntityManager::getComponentFromEntity<CameraComponent>(2)->move(0, 5);
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::A))
-			EntityManager::getComponentFromEntity<CameraComponent>(2)->view.move(-5, 0);
+			EntityManager::getComponentFromEntity<CameraComponent>(2)->move(-5, 0);
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::D))
-			EntityManager::getComponentFromEntity<CameraComponent>(2)->view.move(5, 0);
+			EntityManager::getComponentFromEntity<CameraComponent>(2)->move(5, 0);
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Q))
-			EntityManager::getComponentFromEntity<CameraComponent>(2)->view.zoom(1.2f);
+			EntityManager::getComponentFromEntity<CameraComponent>(2)->zoom(1.2f);
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::E))
-			EntityManager::getComponentFromEntity<CameraComponent>(2)->view.zoom(0.8f);
+			EntityManager::getComponentFromEntity<CameraComponent>(2)->zoom(0.8f);
 		
 		window.clear(sf::Color::White);
 		renderSystem.update();
