@@ -23,6 +23,8 @@ int Game::run()
 	SceneManager::addScene("Game", &gameScene);
 	SceneManager::loadScene("Game");
 
+	// This is a random change to test some of the stuff that I've learned
+	std::cout << "look at this random change!" << std::endl;
 
 	RenderingSystem renderSystem(window);
 	
